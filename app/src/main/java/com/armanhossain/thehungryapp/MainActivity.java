@@ -1,8 +1,10 @@
 package com.armanhossain.thehungryapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     CardView startersCardView;
     CardView mainsCardView;
+    TextView emailTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +37,35 @@ public class MainActivity extends AppCompatActivity {
     private void findViews() {
         startersCardView = findViewById(R.id.cv_starters);
         mainsCardView = findViewById(R.id.cv_mains);
+        emailTextView = findViewById(R.id.tv_restaurant_email);
 
         startersCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startersActivityIntent = new Intent(MainActivity.this, StarterActivity.class);
                 startActivity(startersActivityIntent);
+            }
+        });
+
+        mainsCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainCoursesActivityIntent = new Intent(MainActivity.this, MainCourseActivity.class);
+                startActivity(mainCoursesActivityIntent);
+            }
+        });
+
+        emailTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent launchEmailAppIntent = new Intent(Intent.ACTION_SENDTO);
+                launchEmailAppIntent.setData(Uri.parse("mailto:armanhossain1190@gmail.com"));
+//                launchEmailAppIntent.putExtra(Intent.EXTRA_EMAIL, addresses);
+//                launchEmailAppIntent.putExtra(Intent.EXTRA_SUBJECT, "Mail sent from Android App");
+//                if (launchEmailAppIntent.resolveActivity(getPackageManager()) != null) {
+//                    startActivity(launchEmailAppIntent);
+//                }
+                startActivity(launchEmailAppIntent);
             }
         });
     }

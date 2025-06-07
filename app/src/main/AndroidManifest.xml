@@ -13,8 +13,10 @@
         android:theme="@style/Theme.TheHungryApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
+            android:name=".MainCourseActivity"
+            android:exported="false"
+            android:label="Main Courses"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".StarterActivity"
             android:exported="false"
