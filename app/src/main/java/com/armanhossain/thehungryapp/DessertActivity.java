@@ -34,7 +34,8 @@ public class DessertActivity extends AppCompatActivity {
 
         ListView dessertsListView = findViewById(R.id.lv_desserts);
 
-        Dish[] desertDishArray = {new Dish("Cocoa and blackcurrant cake", "Moist cake made with cocoa and fresh blackcurrant", 499),
+        Dish[] desertDishArray = {
+                new Dish("Cocoa and blackcurrant cake", "Moist cake made with cocoa and fresh blackcurrant", 499),
                 new Dish("Mulberry and cardamom crumble", "Fresh mulberry and green cardamom topped with butter crumble", 699),
                 new Dish("Lemon scones with chilli jam", "Vegan scones served with chilli jam and fresh coconut cream", 599),
                 new Dish("Potato and banana vegan crepes", "Crispy vegan crepes filled with fresh potato and banana", 599),
