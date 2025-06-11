@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     CardView startersCardView;
     CardView mainsCardView;
+    CardView dessertsCardView;
     TextView emailTextView;
 
     @Override
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private void findViews() {
         startersCardView = findViewById(R.id.cv_starters);
         mainsCardView = findViewById(R.id.cv_mains);
+        dessertsCardView = findViewById(R.id.cv_desserts);
         emailTextView = findViewById(R.id.tv_restaurant_email);
 
         startersCardView.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent mainCoursesActivityIntent = new Intent(MainActivity.this, MainCourseActivity.class);
                 startActivity(mainCoursesActivityIntent);
+            }
+        });
+
+        dessertsCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dessertActivityIntent = new Intent(MainActivity.this, DessertActivity.class);
+                startActivity(dessertActivityIntent);
             }
         });
 
